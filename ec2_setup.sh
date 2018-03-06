@@ -113,7 +113,7 @@ select yn in "Yes" "No"; do
       sudo cp /tmp/redis-stable/redis.conf /etc/redis
       sed -i "s/\bsupervised no/supervised systemd/" "/etc/redis/redis.conf"
       sudo cat ./redis.systemd.txt >> /etc/systemd/system/redis.service
-      sudo systemctl start redisi && sudo systemctl enable redis;  break;;
+      sudo systemctl start redis && sudo systemctl enable redis;  break;;
     No ) break;;
   esac
 done
